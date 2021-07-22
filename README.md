@@ -21,3 +21,17 @@ Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
 
 `0 <= prices[i] <= 10^4`
 
+## Solution in JavaScript:
+
+```
+var maxProfit = function(prices) {
+    let maxprofit = 0;
+    
+    for (let i = 1; i < prices.length; i++) {
+        if (prices[i] > prices[i - 1]) {
+            maxprofit += prices[i] - prices[i - 1];
+        }
+    }
+    return maxprofit;
+};
+```
